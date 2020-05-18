@@ -1,6 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 const Form = () => {
+  
+  const [appointment, setAppointment] = useState({
+    pet: '',
+    owner: '',
+    date: '',
+    hour: '',
+    symptoms: '',
+  });
+
+  const handleChange = () => {
+    console.log('Escribiendo...');
+  }
+
   return (
     <Fragment>
       <h2>Crear Cita</h2>
@@ -11,6 +24,7 @@ const Form = () => {
           name="pet"
           className="u-full-width"
           placeholder="Nombre Mascota"
+          onChange={handleChange}
         />
 
         <label>Nombre Dueño</label>
@@ -19,6 +33,7 @@ const Form = () => {
           name="owner"
           className="u-full-width"
           placeholder="Nombre Dueño de la mascota"
+          onChange={handleChange}
         />
 
         <label>Fecha Dueño</label>
@@ -26,6 +41,7 @@ const Form = () => {
             type="date" 
             name="date" 
             className="u-full-width"                 
+            onChange={handleChange}
         />
 
         <label>Hora</label>
@@ -33,12 +49,14 @@ const Form = () => {
             type="time" 
             name="hour" 
             className="u-full-width"             
+            onChange={handleChange}
         />
 
         <label>Síntomas</label>
         <textarea 
             className="u-full-width" 
             name="symptoms"
+            onChange={handleChange}
         >
         </textarea>
 
