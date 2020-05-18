@@ -10,6 +10,8 @@ const Form = () => {
     symptoms: '',
   });
 
+  const [error, setError] = useState(false);
+
   const handleChange = (e) => {
     setAppointment({
       ...appointment,
@@ -23,6 +25,11 @@ const Form = () => {
     e.preventDefault();
 
     // validate
+    if( pet.trim() === '' || owner.trim() === '' || date.trim() === '' || hour.trim() === '' || symptoms.trim() === ''){
+      setError(true);
+      return;
+    }
+    setError(false);
 
     // assign ID
 
@@ -34,6 +41,9 @@ const Form = () => {
   return (
     <Fragment>
       <h2>Crear Cita</h2>
+
+      {error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null }
+
       <form
         onSubmit={handleForm}
       >
