@@ -13,6 +13,11 @@ function App() {
     ]);
   }
 
+  const deleteAppointment = id => {
+    const newAppointments = appointments.filter(appointment => appointment.id !== id);
+    setAppointments(newAppointments);
+  }
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -28,7 +33,8 @@ function App() {
             {appointments.map(appointment => (
               <Appointment
                 key={appointment.id}
-                appointment={appointment}                
+                appointment={appointment}
+                deleteAppointment={deleteAppointment}                
               />
             ))}
           </div>
