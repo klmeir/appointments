@@ -19,10 +19,24 @@ const Form = () => {
 
   const { pet, owner, date, hour, symptoms} = appointment;
 
+  const handleForm = e => {
+    e.preventDefault();
+
+    // validate
+
+    // assign ID
+
+    // create appointment
+
+    // restart fomr
+  }
+
   return (
     <Fragment>
       <h2>Crear Cita</h2>
-      <form>
+      <form
+        onSubmit={handleForm}
+      >
         <label>Nombre Mascota</label>
         <input
           type="text"
