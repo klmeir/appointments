@@ -43,7 +43,15 @@ const Form = ({ createAppointment }) => {
     // create appointment
     createAppointment(appointment);
 
-    // restart fomr
+    // restart form
+    setAppointment({
+      pet: "",
+      owner: "",
+      date: "",
+      hour: "",
+      symptoms: "",
+    });
+
   };
 
   return (
