@@ -12,6 +12,8 @@ function App() {
   const [appointments, setAppointments] = useState(appointmentsInitials);
 
   useEffect( () => {
+    let appointmentsInitials = JSON.parse(localStorage.getItem('appointments'));
+    
     if(appointmentsInitials) {
       localStorage.setItem('appointments', JSON.stringify(appointments));
     } else {
