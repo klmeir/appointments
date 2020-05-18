@@ -18,6 +18,8 @@ function App() {
     setAppointments(newAppointments);
   }
 
+  const title = appointments.length === 0 ? 'No hay citas' : 'Administra tus citas';
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -29,7 +31,7 @@ function App() {
             />
           </div>
           <div className="one-half column">
-            <h2>Administra tus citas</h2>
+            <h2>{title}</h2>
             {appointments.map(appointment => (
               <Appointment
                 key={appointment.id}
